@@ -1,5 +1,0 @@
-[phases.install]
-cmds = ["pip install -r esports_bot/requirements.txt"]
-
-[start]
-cmd = "python esports_bot/bot.py"
