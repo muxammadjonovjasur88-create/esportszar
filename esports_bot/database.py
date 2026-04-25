@@ -123,6 +123,12 @@ def init_db():
 
     conn.commit(); conn.close()
     print("✅ DB tayyor!")
+    # Turnirni reg holatiga qaytarish (bir marta ishlagandan keyin o'chiring)
+    try:
+        conn2 = get_conn(); c2 = conn2.cursor()
+        c2.execute("UPDATE tournaments SET status='reg' WHERE status='checkin'")
+        conn2.commit(); conn2.close()
+    except: pass
 
 # ── SOZLAMALAR ────────────────────────────────────────────────────────
 
